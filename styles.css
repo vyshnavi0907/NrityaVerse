@@ -116,27 +116,8 @@ nav ul li a:hover {
 .cart-icon a:hover {
     transform: scale(1.1);
 }
+
 /* Hero Section */
-@keyframes backgroundAndTextMove {
-    0% {
-        transform: translateY(-50px); /* Start from above the screen */
-        opacity: 0; /* Invisible at the start */
-    }
-    100% {
-        transform: translateY(0); /* Move to its original position */
-        opacity: 1; /* Become fully visible */
-    }
-}
-@keyframes textMoveFromTop {
-    0% {
-        transform: translateY(-50px); /* Start from above the screen */
-        opacity: 0; /* Invisible at the start */
-    }
-    100% {
-        transform: translateY(0); /* Move to its original position */
-        opacity: 1; /* Become fully visible */
-    }
-}
 .hero {
     height: 100vh;  /* Full screen height */
     display: flex;
@@ -151,7 +132,6 @@ nav ul li a:hover {
     animation: backgroundAndTextMove 1.5s ease-out; /* Apply the animation */
 }
 
-/* Text container */
 .hero-text {
     position: relative;
     z-index: 10;  /* Ensure text stays above the background */
@@ -187,8 +167,6 @@ nav ul li a:hover {
     background: #ff6f3f;
 }
 
-
-
 /* Categories Section */
 .categories {
     padding: 60px 15px;
@@ -221,24 +199,17 @@ nav ul li a:hover {
 .category:hover {
     transform: scale(1.1);
 }
-/* Category Images */
+
 .category img {
-    width: 100%;  /* Makes the image cover the full width of the category */
-    height: auto; /* Maintains the aspect ratio of the images */
-    border-radius: 10px;  /* Optional: adds rounded corners to the image */
-    transition: transform 0.3s ease;  /* Optional: adds a hover effect */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
 .category:hover img {
-    transform: scale(1.05);  /* Optional: zoom in effect when hovering */
+    transform: scale(1.05);
 }
-
-.category-image {
-    width: 100%;  /* Ensure images fill the available space */
-    height: auto;
-    object-fit: cover;  /* Ensures the image covers the area without stretching */
-}
-
 
 /* New Arrivals Section */
 .new-arrivals {
@@ -255,29 +226,25 @@ nav ul li a:hover {
 }
 
 .products {
-    display: flex; /* Horizontal layout */
+    display: flex;
     gap: 20px;
-    justify-content: center; /* Center the products */
+    justify-content: center;
+    flex-wrap: wrap;  /* Make products responsive */
 }
 
-.products {
-    display: flex; /* Horizontal layout */
-    gap: 20px;
-    justify-content: center; /* Center the products */
-}
-
+/* Product Styles */
 .product {
     background: #1c1c1c;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-    width: 250px; /* Fixed width for each product */
-    transition: transform 0.3s; /* Hover animation */
+    width: 250px;
+    transition: transform 0.3s;
 }
 
 .product:hover {
-    transform: translateY(-10px); /* Hover effect for lift */
+    transform: translateY(-10px);
 }
 
 .product img {
@@ -300,283 +267,137 @@ nav ul li a:hover {
     background: #ff6f3f;
 }
 
-.kuchipudi-page .products {
-    display: flex;
-    justify-content: center; /* Centers the products horizontally */
-    gap: 20px; /* Adds space between products */
-    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
-    padding: 20px; /* Optional padding */
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    .hero-text h2 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
 }
 
-.kuchipudi-page .product {
-    width: 250px; /* Adjust the width of each product */
-    background: #1c1c1c;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    transition: transform 0.3s ease;
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .hero {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-text h2 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .categories h2 {
+        font-size: 28px;
+    }
+
+    .category-list {
+        flex-direction: column;
+    }
+
+    .category {
+        width: 100%;
+    }
+
+    .products {
+        flex-direction: column;
+    }
+
+    .product {
+        width: 100%;
+    }
 }
 
-.kuchipudi-page .product:hover {
-    transform: translateY(-10px); /* Hover effect to lift product */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    .hero-text h2 {
+        font-size: 24px;
+    }
+
+    .hero-text p {
+        font-size: 12px;
+    }
+
+    .categories h2 {
+        font-size: 24px;
+    }
+
+    .category {
+        width: 100%;
+    }
+
+    .category img {
+        width: 100%;
+    }
+
+    .product {
+        width: 100%;
+    }
+
+    .product img {
+        width: 100%;
+    }
+
+    .contact-form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .cart-item {
+        width: 100%;
+    }
 }
 
-.kuchipudi-page .product img {
-    width: 100%; /* Ensures the image takes up the entire width of the product container */
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
+@media (max-width: 320px) {
+    header h1 {
+        font-size: 18px;
+    }
 
-.kuchipudi-page .product .btn {
-    background: #f06;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-}
+    nav ul {
+        gap: 6px;
+    }
 
-.kuchipudi-page .product .btn:hover {
-    background: #ff6f3f;
-}
+    .hero-text h2 {
+        font-size: 20px;
+    }
 
-.bharatanatyam-page .products {
-    display: flex;
-    justify-content: center; /* Centers the products horizontally */
-    gap: 20px; /* Adds space between products */
-    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
-    padding: 20px; /* Optional padding */
-}
+    .hero-text p {
+        font-size: 10px;
+    }
 
-.bharatanatyam-page .product {
-    width: 250px; /* Adjust the width of each product */
-    background: #1c1c1c;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.bharatanatyam-page .product:hover {
-    transform: translateY(-10px); /* Hover effect to lift product */
-}
-
-.bharatanatyam-page .product img {
-    width: 100%; /* Ensures the image takes up the entire width of the product container */
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.bharatanatyam-page .product .btn {
-    background: #f06;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.bharatanatyam-page .product .btn:hover {
-    background: #ff6f3f;
-}
-.hiphop-page .products {
-    display: flex;
-    justify-content: center; /* Centers the products horizontally */
-    gap: 20px; /* Adds space between products */
-    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
-    padding: 20px; /* Optional padding */
-}
-
-.hiphop-page .product {
-    width: 250px; /* Adjust the width of each product */
-    background: #1c1c1c;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.hiphop-page .product:hover {
-    transform: translateY(-10px); /* Hover effect to lift product */
-}
-
-.hiphop-page .product img {
-    width: 100%; /* Ensures the image takes up the entire width of the product container */
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.hiphop-page .product .btn {
-    background: #f06;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.hiphop-page .product .btn:hover {
-    background: #ff6f3f;
-}
-
-
-/* Footer */
-footer {
-    background: #000;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #ccc;
-}
-/* Contact Us Page */
-.contact-page {
-    text-align: center;
-    padding: 40px;
-    background: #000000;
-}
-
-.contact-page h2 {
-    margin-bottom: 20px;
-    font-size: 32px;
-}
-
-.contact-page p {
-    margin-bottom: 30px;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    background: #4d4b4b;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form .form-group {
-    margin-bottom: 15px;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.contact-form button {
-    background: #f06;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s;
-}
-
-.contact-form button:hover {
-    background: #ff6f3f;
-}
-
-/* Cart Page */
-.cart-page {
-    padding: 40px;
-    text-align: center;
-}
-
-.cart-page h2 {
-    margin-bottom: 30px;
-    font-size: 32px;
-}
-
-.cart-items {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.cart-item {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
-}
-
-.cart-item img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.cart-item p {
-    margin: 10px 0;
-}
-
-.remove-btn {
-    background: #f06;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.remove-btn:hover {
-    background: #ff6f3f;
-}
-
-.cart-total {
-    font-size: 24px;
-}
-
-.checkout-btn {
-    background: #f06;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background 0.3s;
-}
-
-.checkout-btn:hover {
-    background: #ff6f3f;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
